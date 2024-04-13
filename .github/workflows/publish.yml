@@ -29,7 +29,7 @@ jobs:
         id: compare-versions
         run: |
           version=$(node -p "require('./package.json').version")
-          latest=$(npm show dont-throw version)
+          latest=$(npm show dont-throw version || echo -n '0.0.0')
 
           echo "current branch version: $version, current upstream version: $latest"
 

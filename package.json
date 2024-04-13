@@ -1,0 +1,38 @@
+{
+  "name": "dont-throw",
+  "version": "0.0.1",
+  "description": "Don't throw utilities",
+  "main": "dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "format": "npx prettier --write '**/*.ts'",
+    "clean": "rm -rf dist",
+    "build": "npm run build:version && npm run build:man && tsc",
+    "build:clean": "npm run clean && npm run build",
+    "prepublishOnly": "npm run test:clean && npm run build:clean"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thekhanj/dont-throw.git"
+  },
+  "author": "Pooyan Khanjankhani <pooyankhan@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thekhanj/dont-throw/issues"
+  },
+  "keywords": [
+    "trycatch",
+    "dont-throw"
+  ],
+  "files": [
+    "dist/*.d.ts",
+    "dist/*.js",
+    "dist/adapters/*.d.ts",
+    "dist/adapters/*.js"
+  ],
+  "homepage": "https://github.com/thekhanj/dont-throw#readme",
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "prettier": "^3.2.5"
+  }
+}
